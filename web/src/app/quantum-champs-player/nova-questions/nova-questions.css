@@ -1,0 +1,74 @@
+/* Quantum Champs — reusable Team Nova question / answer frame */
+.qc-nova-root,.qc-nova-root *,.qc-nova-root *::before,.qc-nova-root *::after{box-sizing:border-box}
+.qc-nova-root{min-height:100dvh;background:linear-gradient(180deg,#b7e0f1 0%,#efdfe5 55%,#dfe6e9 100%);font-family:'Segoe UI',Arial,sans-serif;color:#374151;overflow-x:hidden}
+.qc-nova-shell{position:relative;width:100%;max-width:1360px;min-height:100dvh;margin:auto;padding:22px 16px 40px;display:flex;flex-direction:column;align-items:center}
+.qc-nova-logo{position:absolute;left:16px;top:12px;width:58px;height:60px;z-index:4}
+.qc-nova-logo img{width:100%;height:100%;object-fit:contain}
+.qc-nova-status{min-width:290px;min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 4px 14px;border:1px solid #a84b9b;border-radius:50px;background:#dfe6e9;color:#683076;font-size:12px;font-weight:800;box-shadow:inset 2px 2px 4px rgba(164,175,182,.55),inset -2px -2px 4px #fff,1px 2px 3px #fff}
+.qc-nova-count{align-self:stretch;display:flex;align-items:center;padding:0 12px;border-radius:40px;background:#dfe6e9;box-shadow:-2px -2px 3px #fff,2px 3px 4px rgba(151,161,170,.38);color:#374151;font-size:11px;white-space:nowrap}
+.qc-nova-count strong{margin-left:4px;color:#6c278a}
+.qc-nova-xp-pill{position:absolute;right:20px;top:22px;padding:6px 12px;border:4px solid #fff;border-radius:50px;background:linear-gradient(100deg,#67077b,#218f8f);color:white;font-size:12px;font-weight:800}
+.qc-nova-question{position:relative;z-index:2;width:min(85%,1110px);min-height:56px;margin-top:38px;padding:16px 24px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:clamp(14px,1.4vw,20px);font-weight:800;letter-spacing:.3px;color:#710477;background:#dfe6e9;border:2px dotted #ad61aa;border-radius:8px;box-shadow:inset 2px 2px 3px rgba(160,170,178,.4),inset -2px -2px 3px #fff,2px 3px 4px #fff}
+.qc-nova-board{position:relative;width:100%;min-height:540px;margin-top:-14px;padding:75px 6% 40px;border-radius:18px;background-color:#dfe6e9;background-image:linear-gradient(60deg,rgba(255,255,255,.23) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.23) 75%),linear-gradient(120deg,rgba(255,255,255,.23) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.23) 75%);background-size:28px 48px;box-shadow:inset 2px 2px 4px rgba(164,175,182,.55),inset -2px -2px 4px #fff,1px 2px 3px #fff}
+.qc-nova-options{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 30px}
+.qc-nova-option{min-height:78px;padding:12px 18px;display:flex;align-items:center;gap:10px;border:0;border-radius:13px;background:#dfe6e9;box-shadow:inset 2px 2px 4px rgba(164,175,182,.55),inset -2px -2px 4px #fff,1px 2px 3px rgba(151,161,170,.4);color:#374151;font:500 clamp(13px,1.25vw,17px) 'Segoe UI',Arial,sans-serif;letter-spacing:.2px;text-align:left;cursor:pointer;transition:transform .15s ease}
+.qc-nova-option:hover:not(:disabled){transform:translateY(-2px)}
+.qc-nova-option:disabled{opacity:.3;cursor:default}
+.qc-nova-option-letter{width:24px;height:24px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#75077e;color:white;font-size:13px;font-weight:800;text-transform:lowercase}
+.qc-nova-lifelines{display:flex;justify-content:center;gap:clamp(24px,6vw,90px);margin-top:70px}
+.qc-nova-lifelines button{display:flex;flex-direction:column;align-items:center;gap:8px;border:0;background:none;cursor:pointer;font:800 13px 'Segoe UI',Arial,sans-serif;color:#77007c}
+.qc-nova-lifelines button:nth-child(2){color:#ef1165}.qc-nova-lifelines button:nth-child(3){color:#278400}
+.qc-nova-lifelines button:disabled{opacity:.4;cursor:default}
+.qc-nova-life{width:96px;height:58px;display:flex;align-items:center;justify-content:center;border:7px solid #fff;border-radius:50%;box-shadow:2px 3px 4px rgba(151,161,170,.38);color:#fff;font-size:17px}
+.qc-nova-life-blitz{background:linear-gradient(110deg,#6a0477,#ed176b)}.qc-nova-life-boost{background:linear-gradient(110deg,#6a0477,#235cdd)}.qc-nova-life-split{background:linear-gradient(110deg,#49ba10,#175500)}
+.qc-nova-notice{text-align:center;font-size:12px;font-weight:700}
+.qc-nova-board-result{min-height:570px;padding:85px 90px 35px}
+.qc-nova-result-center{width:min(100%,680px);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px}
+.qc-nova-selected{min-height:52px;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 22px;border-radius:12px;background:#dfe6e9;box-shadow:inset 2px 2px 4px rgba(164,175,182,.55),inset -2px -2px 4px #fff,1px 2px 3px #fff;color:#16898b;font-weight:700;font-size:16px;letter-spacing:.3px}
+.qc-nova-selected .qc-nova-option-letter{background:#16898b}
+.qc-nova-fact{width:min(100%,620px);border-radius:13px;overflow:hidden;background:#dfe6e9;box-shadow:inset 2px 2px 4px rgba(164,175,182,.55),inset -2px -2px 4px #fff,2px 3px 4px rgba(151,161,170,.35);text-align:center}
+.qc-nova-fact>div{padding:14px;background:linear-gradient(105deg,#690477,#218f8f);color:#fff;font-size:17px;font-weight:800}
+.qc-nova-fact p{margin:0;padding:18px 22px;line-height:1.6;font-size:14px}
+.qc-nova-result-label{min-height:43px;padding:10px 20px;display:flex;align-items:center;gap:12px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:800;text-align:center}
+.qc-nova-result-label span{font-size:20px}.qc-nova-success{border-color:#3b8f19;color:#32840c}.qc-nova-failure{border-color:#c92d40;color:#c92d40}
+.qc-nova-next,.qc-nova-complete button{padding:11px 24px;border:1px solid #4165f4;border-radius:50px;background:#dfe6e9;box-shadow:-2px -2px 3px #fff,2px 3px 4px rgba(151,161,170,.38);color:#6330a0;font-size:14px;font-weight:800;cursor:pointer}
+.qc-nova-score-rail{position:absolute;top:70px;bottom:48px;width:52px;display:flex;flex-direction:column;justify-content:space-between;align-items:center}
+.qc-nova-score-rail::before{content:"";position:absolute;z-index:0;top:15px;bottom:15px;width:9px;border-radius:10px;background:linear-gradient(#6d267f,#2c75a6,#ec225c,#a79b00)}
+.qc-nova-score-rail span{position:relative;z-index:1;width:45px;height:50px;display:flex;align-items:center;justify-content:center;clip-path:polygon(50% 0,95% 20%,95% 73%,50% 100%,5% 73%,5% 20%);background:linear-gradient(135deg,#661179,#16898b);color:#fff;font-size:20px}
+.qc-nova-score-rail span:nth-child(2){background:linear-gradient(135deg,#2544ba,#182c8a)}.qc-nova-score-rail span:nth-child(3){background:linear-gradient(135deg,#e46c11,#85310a)}.qc-nova-score-rail span:nth-child(4){background:linear-gradient(135deg,#767400,#c7a400)}
+.qc-nova-score-rail-left{left:14px}.qc-nova-score-rail-right{right:14px}.qc-nova-score-rail-right span:first-child{background:linear-gradient(135deg,#80221a,#ed176b)}
+.qc-nova-total{position:absolute;bottom:48px;left:48px;display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:40px;background:linear-gradient(90deg,#777000,#bca000);color:#fff;font-size:12px;font-weight:800}
+.qc-nova-complete{margin:auto;display:flex;flex-direction:column;align-items:center;gap:24px;padding:40px 30px;text-align:center;border-radius:18px;background:#dfe6e9;box-shadow:inset 2px 2px 4px rgba(164,175,182,.55),inset -2px -2px 4px #fff}
+.qc-nova-complete h1{margin:0;color:#702079}.qc-nova-complete strong{font-size:30px;color:#278400}
+@media(max-width:800px){.qc-nova-shell{padding:16px 10px 30px}.qc-nova-logo{width:40px;height:46px;left:10px}.qc-nova-status{margin-top:60px}.qc-nova-xp-pill{top:20px;right:10px}.qc-nova-question{width:90%;margin-top:28px}.qc-nova-board{min-height:470px;padding:60px 5% 30px}.qc-nova-board-result{padding:75px 65px 30px}.qc-nova-options{gap:16px}.qc-nova-option{min-height:66px}.qc-nova-lifelines{margin-top:60px}.qc-nova-score-rail{width:36px}.qc-nova-score-rail span{width:34px;height:39px;font-size:15px}.qc-nova-total{left:30px}}
+@media(max-width:550px){.qc-nova-status{min-width:0;width:min(100%,300px);font-size:10px;padding-left:9px}.qc-nova-count{font-size:10px;padding:0 7px}.qc-nova-question{width:96%;font-size:13px;padding:12px 10px}.qc-nova-board{min-height:520px;padding:55px 12px 24px}.qc-nova-options{grid-template-columns:1fr;gap:12px}.qc-nova-option{min-height:55px;font-size:13px}.qc-nova-lifelines{gap:10px;margin-top:35px}.qc-nova-life{width:75px;height:48px;border-width:5px;font-size:14px}.qc-nova-board-result{padding:65px 45px 30px;min-height:500px}.qc-nova-result-center{gap:18px}.qc-nova-selected{font-size:12px;padding:8px 10px}.qc-nova-fact>div{font-size:14px}.qc-nova-fact p{font-size:12px;padding:12px}.qc-nova-result-label{font-size:11px;padding:8px 10px}.qc-nova-score-rail{top:75px;bottom:80px;width:25px}.qc-nova-score-rail span{width:25px;height:30px;font-size:12px}.qc-nova-score-rail-left{left:4px}.qc-nova-score-rail-right{right:4px}.qc-nova-total{bottom:25px;left:10px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.qc-nova-option{transition:none}}
+
+
+/* 50:50 Split Lifeline - Nova */
+
+.qc-nova-option.qc-nova-option-eliminated {
+  background: #f2dfe3;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.qc-nova-option-eliminated > span:nth-child(2) {
+  color: #bd263b;
+  text-decoration: line-through;
+  text-decoration-color: #bd263b;
+}
+
+.qc-nova-option-cross {
+  margin-left: auto;
+  color: #dc3545;
+  border: 1px solid #c5cdd2;
+  background: #dfe6e9;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

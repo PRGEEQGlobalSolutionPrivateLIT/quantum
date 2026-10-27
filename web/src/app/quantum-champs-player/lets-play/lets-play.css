@@ -1,0 +1,397 @@
+
+/* Quantum Champs - Lets Play Screen */
+
+.qc-lets-root,
+.qc-lets-root *,
+.qc-lets-root *::before,
+.qc-lets-root *::after{
+  box-sizing:border-box;
+}
+
+.qc-lets-root{
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  min-height:0;
+  background:linear-gradient(
+    180deg,
+    #b7e0f1 0%,
+    #efdfe5 55%,
+    #dfe6e9 100%
+  );
+  font-family:'Segoe UI',Arial,sans-serif;
+  color:#374151;
+  overflow:hidden;
+}
+
+/* Full Screen Container */
+
+.qc-lets-container{
+  position:relative;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:0 16px 35px;
+  overflow:hidden;
+}
+
+/* Logo */
+
+.qc-lets-logo{
+  position:absolute;
+  top:18px;
+  left:18px;
+  width:48px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  z-index:5;
+}
+
+.qc-lets-crown{
+  width:44px;
+  height:33px;
+  margin-bottom:-6px;
+  filter:drop-shadow(0 1px 1px #c48c2c);
+}
+
+.qc-lets-shield{
+  width:48px;
+  padding:5px 3px 10px;
+  background:linear-gradient(
+    110deg,
+    #64116e 0%,
+    #8e135e 49%,
+    #d91e68 50%,
+    #ad2050 100%
+  );
+  clip-path:polygon(
+    0 0,
+    100% 0,
+    100% 78%,
+    50% 100%,
+    0 78%
+  );
+  color:#ffffff;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.1;
+  text-align:center;
+}
+
+/* Main Content */
+
+.qc-lets-content{
+  width:100%;
+  height:100%;
+  min-height:0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:clamp(85px,20vh,180px);
+  overflow:hidden;
+}
+
+/* Hexagonal Background */
+
+.qc-lets-hexagon{
+  position:relative;
+  isolation:isolate;
+  width:min(85vw,1080px);
+  height:clamp(210px,32vw,420px);
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+
+  clip-path:polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  );
+
+  background-color:#e5ecef;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M0 10L16 26L32 10M0 3L16 19L32 3M0 -4L16 12L32 -4M0 17L16 33L32 17M0 24L16 40L32 24' fill='none' stroke='%23c5d1d8' stroke-width='2.2' opacity='.65'/%3E%3C/svg%3E");
+  background-size:32px 32px;
+  background-repeat:repeat;
+}
+
+/* Six-Sided Inner Shadow Border */
+
+.qc-lets-hexagon::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  pointer-events:none;
+
+  background:linear-gradient(
+    180deg,
+    rgba(120,133,143,.55) 0%,
+    rgba(140,153,162,.38) 35%,
+    rgba(180,191,199,.22) 65%,
+    rgba(255,255,255,.92) 100%
+  );
+
+  clip-path:polygon(
+    evenodd,
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%,
+    50% 0,
+    50% 0.7%,
+    0.35% 25.18%,
+    0.35% 74.82%,
+    50% 99.3%,
+    99.65% 74.82%,
+    99.65% 25.18%,
+    50% 0.7%
+  );
+
+  opacity:.75;
+}
+
+/* Thin Inner Depth - Left Dark, Right White */
+
+.qc-lets-hexagon::after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(105,120,132,.20) 0%,
+      rgba(105,120,132,.08) .25%,
+      transparent .6%,
+      transparent 99.4%,
+      rgba(255,255,255,.25) 99.75%,
+      rgba(255,255,255,.55) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(110,125,138,.13) 0%,
+      rgba(110,125,138,.055) 7%,
+      transparent 22%,
+      transparent 78%,
+      rgba(255,255,255,.10) 92%,
+      rgba(255,255,255,.45) 100%
+    );
+
+  opacity:.7;
+}
+
+/* Neumorphic Button Outer Shell */
+
+.qc-lets-button-shell{
+  position:relative;
+  z-index:2;
+  width:clamp(230px,35vw,420px);
+  height:clamp(105px,16vw,175px);
+  padding:clamp(12px,2vw,24px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:100px;
+  background:#dfe6e9;
+  box-shadow:
+    -3px -3px 5px rgba(255,255,255,.95),
+    3px 4px 6px rgba(151,161,170,.38),
+    inset 2px 2px 3px rgba(255,255,255,.90),
+    inset -2px -2px 4px rgba(166,176,183,.22);
+  cursor:pointer;
+  transform:scale(1);
+  transform-origin:center;
+  transition:
+    transform .35s ease-in-out,
+    box-shadow .35s ease-in-out;
+}
+
+/* Inner Gradient Button */
+
+.qc-lets-button{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:100px;
+  background:linear-gradient(
+    105deg,
+    #3151d9 0%,
+    #7230b1 48%,
+    #ed176b 100%
+  );
+  box-shadow:
+    inset 1px 1px 2px rgba(255,255,255,.18),
+    inset -1px -2px 3px rgba(100,20,85,.12),
+    1px 3px 4px rgba(91,80,100,.20);
+  color:#ffffff;
+  font-family:'Segoe UI',Arial,sans-serif;
+  font-size:clamp(26px,4vw,54px);
+  font-weight:800;
+  letter-spacing:2px;
+  white-space:nowrap;
+  text-shadow:
+    0 3px 3px rgba(43,35,68,.35);
+}
+
+/* Inflate on Hover */
+
+.qc-lets-button-shell:hover{
+  transform:scale(1.06);
+  box-shadow:
+    -5px -5px 9px rgba(255,255,255,1),
+    5px 6px 10px rgba(151,161,170,.45),
+    inset 2px 2px 3px rgba(255,255,255,.90),
+    inset -2px -2px 4px rgba(166,176,183,.22);
+}
+
+/* Deflate on Click */
+
+.qc-lets-button-shell:active{
+  transform:scale(.95);
+  box-shadow:
+    inset 4px 4px 7px rgba(155,165,172,.55),
+    inset -4px -4px 7px #ffffff;
+}
+
+.qc-lets-button-shell:focus-visible{
+  outline:3px solid #4165f4;
+  outline-offset:5px;
+}
+
+/* Laptop */
+
+@media(min-width:901px) and (max-width:1350px){
+
+  .qc-lets-content{
+    padding-top:clamp(85px,19vh,140px);
+  }
+
+  .qc-lets-hexagon{
+    width:min(85vw,900px);
+    height:clamp(210px,30vw,350px);
+  }
+
+  .qc-lets-button-shell{
+    width:clamp(230px,35vw,350px);
+    height:clamp(105px,15vw,145px);
+  }
+
+  .qc-lets-button{
+    font-size:clamp(26px,3.5vw,43px);
+  }
+}
+
+/* Short Desktop */
+
+@media(min-width:901px) and (max-height:700px){
+
+  .qc-lets-content{
+    padding-top:clamp(65px,18vh,110px);
+  }
+
+  .qc-lets-hexagon{
+    height:clamp(200px,28vw,300px);
+  }
+
+  .qc-lets-button-shell{
+    height:clamp(95px,13vw,130px);
+  }
+}
+
+/* Tablet */
+
+@media(max-width:900px){
+
+  .qc-lets-content{
+    padding-top:clamp(100px,20vh,160px);
+  }
+
+  .qc-lets-hexagon{
+    width:92vw;
+    height:clamp(200px,38vw,320px);
+  }
+
+  .qc-lets-button-shell{
+    width:clamp(190px,40vw,300px);
+    height:clamp(90px,17vw,135px);
+    padding:14px;
+  }
+
+  .qc-lets-button{
+    font-size:clamp(23px,4vw,38px);
+  }
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+  .qc-lets-container{
+    padding:0 12px 30px;
+  }
+
+  .qc-lets-logo{
+    top:13px;
+    left:12px;
+    width:40px;
+  }
+
+  .qc-lets-crown{
+    width:36px;
+    height:27px;
+    margin-bottom:-5px;
+  }
+
+  .qc-lets-shield{
+    width:40px;
+    font-size:7px;
+    padding:4px 2px 8px;
+  }
+
+  .qc-lets-content{
+    padding-top:clamp(130px,28vh,220px);
+  }
+
+  .qc-lets-hexagon{
+    width:100%;
+    height:clamp(180px,55vw,250px);
+  }
+
+  .qc-lets-button-shell{
+    width:clamp(170px,55vw,240px);
+    height:clamp(80px,25vw,110px);
+    padding:11px;
+  }
+
+  .qc-lets-button{
+    font-size:clamp(20px,5vw,29px);
+    letter-spacing:1px;
+  }
+}
+
+/* Reduced Motion */
+
+@media(prefers-reduced-motion:reduce){
+
+  .qc-lets-button-shell{
+    transition:none;
+  }
+}

@@ -1,0 +1,517 @@
+
+/* Quantum Champs Waiting Screen */
+
+.qc-wait-root,
+.qc-wait-root *,
+.qc-wait-root *::before,
+.qc-wait-root *::after{
+  box-sizing:border-box;
+}
+
+.qc-wait-root{
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  min-height:0;
+  overflow:hidden;
+  background:linear-gradient(
+    180deg,
+    #b4e0f1 0%,
+    #f0dce3 56%,
+    #dfe6e9 100%
+  );
+  font-family:'Segoe UI',Arial,sans-serif;
+  color:#374151;
+}
+
+.qc-wait-layout{
+  width:100%;
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:clamp(12px,3vh,32px) 18px;
+  overflow-y:auto;
+}
+
+/* Center logo and three dotted rings */
+
+.qc-wait-logo-wrap{
+  position:relative;
+  width:clamp(190px,20vw,250px);
+  height:clamp(190px,20vw,250px);
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  margin:0 0 clamp(25px,4vh,43px);
+}
+
+.qc-wait-ring{
+  position:absolute;
+  display:block;
+  border-radius:50%;
+  border:1px dashed;
+  pointer-events:none;
+}
+
+.qc-wait-ring-outer{
+  inset:0;
+  border-color:#9852b5;
+}
+
+.qc-wait-ring-middle{
+  inset:10%;
+  border-color:#5784f6;
+}
+
+.qc-wait-ring-inner{
+  inset:21%;
+  border-color:#e84799;
+}
+
+/* Small stars around the logo */
+
+.qc-wait-star{
+  position:absolute;
+  font-size:20px;
+  line-height:1;
+  color:#b7c0c8;
+  opacity:.4;
+}
+
+.qc-wait-star-one{
+  top:28%;
+  left:34%;
+}
+
+.qc-wait-star-two{
+  top:45%;
+  right:24%;
+}
+
+.qc-wait-star-three{
+  bottom:29%;
+  left:27%;
+}
+
+.qc-wait-star-four{
+  bottom:27%;
+  right:30%;
+}
+
+/* Crown and shield */
+
+.qc-wait-brand{
+  position:relative;
+  z-index:1;
+  width:clamp(72px,8vw,95px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.qc-wait-crown{
+  width:90%;
+  height:auto;
+  display:block;
+  margin-bottom:-9px;
+  filter:drop-shadow(0 2px 1px #c48c2c);
+}
+
+.qc-wait-shield{
+  position:relative;
+  width:100%;
+  padding:12px 3px 19px;
+  border-radius:7px 7px 4px 4px;
+  clip-path:polygon(
+    0 0,
+    100% 0,
+    100% 78%,
+    50% 100%,
+    0 78%
+  );
+  background:linear-gradient(
+    100deg,
+    #60106a 0%,
+    #87105e 49%,
+    #d61667 50%,
+    #b11e4c 100%
+  );
+  color:#fff;
+  font-size:clamp(12px,1.35vw,16px);
+  font-weight:800;
+  line-height:1.15;
+  text-align:center;
+  text-shadow:0 2px 2px #64103f;
+}
+
+/* Waiting heading */
+
+.qc-wait-heading{
+  width:100%;
+  margin:0 0 clamp(28px,4.5vh,48px);
+  font-size:clamp(25px,3.65vw,48px);
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:-.4px;
+  text-align:center;
+  background:linear-gradient(
+    90deg,
+    #700174 2%,
+    #e51c61 48%,
+    #652805 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(1px 3px 2px #bcb5b6);
+}
+
+/* Team cards — neumorphic raised effect */
+
+.qc-wait-teams{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(20px,3vw,40px);
+  width:100%;
+  margin:0 0 18px;
+}
+
+.qc-wait-team{
+  width:clamp(185px,20vw,245px);
+  min-height:clamp(145px,17vh,180px);
+  border:none;
+  border-radius:13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:15px 12px;
+  box-shadow:
+    -3px -3px 5px #ffffff,
+    3px 3px 5px #c4c4c4;
+}
+
+.qc-wait-team-nova{
+  background:linear-gradient(
+    130deg,
+    #e3e8ff,
+    #ead4f2
+  );
+}
+
+.qc-wait-team-blaze{
+  background:linear-gradient(
+    130deg,
+    #f9e1ea,
+    #f4a7c0
+  );
+}
+
+/* Hexagon team names */
+
+.qc-wait-emblem{
+  width:clamp(75px,8vw,95px);
+  height:clamp(53px,6vw,70px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  clip-path:polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  );
+  color:white;
+  font-size:clamp(14px,1.35vw,18px);
+  font-weight:800;
+  text-shadow:0 2px 2px rgba(0,0,0,.3);
+}
+
+.qc-wait-emblem-nova{
+  background:linear-gradient(
+    180deg,
+    #6a1078,
+    #197c78
+  );
+}
+
+.qc-wait-emblem-blaze{
+  background:linear-gradient(
+    180deg,
+    #ef2168,
+    #79320e
+  );
+}
+
+/* Team mottos */
+
+.qc-wait-motto{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  margin:10px 0 12px;
+  font-size:clamp(12px,1.15vw,15px);
+  font-weight:700;
+  color:#374151;
+  white-space:nowrap;
+}
+
+.qc-wait-motto-icon{
+  font-size:20px;
+  color:#8735aa;
+  line-height:1;
+}
+
+.qc-wait-team-blaze .qc-wait-motto-icon{
+  color:#df2765;
+}
+
+/* Joined / Waiting pills — soft raised neumorphic effect */
+
+.qc-wait-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:125px;
+  max-width:100%;
+  min-height:23px;
+  padding:4px 12px;
+  border:none;
+  border-radius:20px;
+  color:#fff;
+  font-size:clamp(10px,.9vw,12px);
+  font-weight:600;
+  white-space:nowrap;
+  box-shadow:
+    inset -1px -1px 2px rgba(0,0,0,.15),
+    inset 1px 1px 2px rgba(255,255,255,.2),
+    2px 3px 4px rgba(120,110,120,.2);
+}
+
+.qc-wait-pill-nova{
+  background:linear-gradient(
+    90deg,
+    #601179,
+    #237d7b
+  );
+}
+
+.qc-wait-pill-blaze{
+  background:linear-gradient(
+    180deg,
+    #ed2167,
+    #74320f
+  );
+}
+
+/* VS badge — raised outer shell and inset inner surface */
+
+.qc-wait-vs{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:70px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:25px;
+  border:none;
+  background:#dfe6e9;
+  box-shadow:
+    -3px -3px 5px #ffffff,
+    3px 3px 5px #bfc6c9;
+}
+
+.qc-wait-vs span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:55px;
+  height:28px;
+  border-radius:20px;
+  border:none;
+  background:#dfe6e9;
+  box-shadow:
+    inset 2px 2px 4px #b7c1c6,
+    inset -2px -2px 4px #ffffff;
+  color:#a13c9b;
+  font-size:19px;
+  font-weight:800;
+}
+
+/* Bottom status */
+
+.qc-wait-status{
+  margin:0;
+  font-size:clamp(11px,1.1vw,15px);
+  font-weight:500;
+  letter-spacing:.35px;
+  line-height:1.5;
+  color:#374151;
+  text-align:center;
+}
+
+/* Accept / Decline buttons */
+
+.qc-wait-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:4px;
+}
+
+.qc-wait-button{
+  min-width:155px;
+  padding:11px 22px;
+  border:1.5px solid transparent;
+  border-radius:40px;
+  background-image:
+    linear-gradient(#dfe6e9,#dfe6e9),
+    linear-gradient(110deg,#4165f4,#e51d73);
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  box-shadow:
+    -3px -3px 6px #fff,
+    4px 5px 7px #bbb;
+  color:#94339e;
+  font-family:inherit;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.qc-wait-button:focus-visible{
+  outline:2px solid #4165f4;
+  outline-offset:3px;
+}
+
+.qc-wait-error{
+  margin:12px 0 0;
+  color:#a91849;
+  font-size:13px;
+}
+
+/* Mobile responsiveness */
+
+@media(max-width:700px){
+  .qc-wait-layout{
+    padding:20px 12px;
+  }
+
+  .qc-wait-logo-wrap{
+    width:clamp(160px,38vw,215px);
+    height:clamp(160px,38vw,215px);
+    margin-bottom:25px;
+  }
+
+  .qc-wait-heading{
+    font-size:clamp(23px,5vw,34px);
+    margin-bottom:28px;
+  }
+
+  .qc-wait-teams{
+    gap:14px;
+  }
+
+  .qc-wait-team{
+    width:min(43vw,210px);
+    min-height:145px;
+    padding:12px 7px;
+  }
+
+  .qc-wait-vs{
+    width:54px;
+    height:33px;
+  }
+
+  .qc-wait-vs span{
+    width:43px;
+    height:23px;
+    font-size:15px;
+  }
+
+  .qc-wait-motto{
+    font-size:11px;
+  }
+
+  .qc-wait-pill{
+    min-width:0;
+    padding:4px 8px;
+    font-size:9px;
+  }
+}
+
+@media(max-width:390px){
+  .qc-wait-team{
+    width:44vw;
+    padding:10px 5px;
+  }
+
+  .qc-wait-emblem{
+    width:65px;
+    height:50px;
+    font-size:12px;
+  }
+
+  .qc-wait-motto{
+    font-size:10px;
+    gap:2px;
+  }
+
+  .qc-wait-pill{
+    font-size:8px;
+    white-space:normal;
+  }
+}
+
+/* Fit smaller desktop screens */
+
+@media(max-height:650px){
+  .qc-wait-layout{
+    padding:10px 16px;
+  }
+
+  .qc-wait-logo-wrap{
+    width:clamp(145px,27vh,195px);
+    height:clamp(145px,27vh,195px);
+    margin-bottom:16px;
+  }
+
+  .qc-wait-heading{
+    margin-bottom:20px;
+    font-size:clamp(23px,3.2vw,40px);
+  }
+
+  .qc-wait-team{
+    min-height:135px;
+    padding:10px;
+  }
+
+  .qc-wait-emblem{
+    width:70px;
+    height:52px;
+  }
+
+  .qc-wait-motto{
+    margin:7px 0;
+  }
+
+  .qc-wait-teams{
+    margin-bottom:12px;
+  }
+}

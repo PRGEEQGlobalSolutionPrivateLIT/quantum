@@ -1,0 +1,159 @@
+.qc-round2-root {
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+  background: radial-gradient(ellipse at 50% 42%, #f6dce5 0%, #e7e2e7 49%, #d4e6ee 78%, #b9e2f2 100%);
+  color: #344052;
+  font-family: "Segoe UI", Inter, sans-serif;
+}
+
+.qc-round2-container {
+  position: relative;
+  width: min(100% - 32px, 1000px);
+  margin: 0 auto;
+  padding: 13px 0 72px;
+}
+
+.qc-round2-logo { position: absolute; top: 14px; left: 0; width: 50px; height: 53px; }
+.qc-round2-logo-img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.qc-round2-top {
+  width: min(100%, 740px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) 100px;
+  align-items: start;
+  justify-items: center;
+  column-gap: 22px;
+}
+
+.qc-round2-team { width: 100px; height: 115px; }
+.qc-round2-team-img { width: 100%; height: 100%; object-fit: contain; }
+
+.qc-round2-heading {
+  position: relative;
+  width: 100%;
+  min-height: 84px;
+  margin-top: 43px;
+  border: 2px solid #d1d7dc;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #e4e8e9dd, #e6ebedb8);
+  box-shadow: inset 2px 2px 3px #ffffffc9, inset -2px -2px 3px #bfc8d0;
+  text-align: center;
+  padding: 12px 8px 8px;
+}
+
+.qc-round2-heading-icon { position: absolute; width: 48px; height: 40px; top: -37px; left: 50%; transform: translateX(-50%); }
+.qc-round2-controller-img { width: 100%; height: 100%; object-fit: contain; }
+.qc-round2-heading-title {
+  margin: 0;
+  font-size: clamp(16px, 2.4vw, 27px);
+  line-height: 1.15;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #3264bc, #b52e88);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.qc-round2-heading-subtitle { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 9px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.qc-round2-dot { font-weight: 900; }
+
+.qc-round2-cards {
+  display: grid;
+  width: min(100%, 705px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 23px 22px;
+  margin: 25px auto 0;
+}
+
+.qc-round2-card, .qc-round2-wide-card {
+  position: relative;
+  background: #e1e8eb;
+  border: 1px solid #c7cdd2;
+  border-radius: 12px;
+  box-shadow: inset 2px 2px 2px #c5ccd0, inset -2px -2px 2px #ffffff;
+}
+.qc-round2-card { grid-column: span 2; min-height: 170px; padding: 11px 8px 8px; text-align: center; }
+.qc-round2-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  border-radius: 50%;
+  color: #ae398b;
+  font-weight: 800;
+  font-size: 15px;
+  background: #e6ecee;
+  box-shadow: -2px -2px 3px #ffffff, 2px 2px 3px #bdc7cc;
+}
+.qc-round2-card-title { margin: 8px 0 4px; font-size: 16px; font-weight: 800; letter-spacing: .3px; line-height: 1.2; }
+.qc-round2-card-description { margin: 0 auto; max-width: 200px; font-size: 11px; line-height: 1.55; letter-spacing: .2px; }
+.qc-round2-card-description span { display: block; }
+.qc-round2-team-options { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 9px; }
+.qc-round2-small-shield { width: 40px; height: 40px; object-fit: contain; }
+.qc-round2-vs { display: grid; place-items: center; width: 54px; height: 25px; border-radius: 24px; border: 1px solid #b83d99; color: #aa358b; font-size: 14px; font-weight: 800; box-shadow: -1px -1px 2px #fff, 1px 1px 2px #c5cbd0; }
+.qc-round2-xp-img { display: block; width: 47px; height: 47px; object-fit: contain; margin: 7px auto 0; }
+.qc-round2-lifelines { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
+.qc-round2-lifeline { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; }
+.qc-round2-lifeline-circle { display: grid; place-items: center; width: 49px; height: 23px; border-radius: 50%; background: #f0eaf1; font-weight: 800; border: 1.5px solid currentColor; }
+.qc-round2-life-blitz, .qc-round2-life-blitz-text { color: #bc1686; }
+.qc-round2-life-boost, .qc-round2-life-boost-text { color: #e62e74; }
+.qc-round2-life-split, .qc-round2-life-split-text { color: #3a9918; }
+.qc-round2-wide-card { grid-column: span 3; display: flex; align-items: center; min-height: 73px; padding: 10px 12px; gap: 14px; border-radius: 7px; }
+.qc-round2-wide-card .qc-round2-number { margin: 0; flex: 0 0 28px; }
+.qc-round2-wide-content { min-width: 0; flex: 1; }
+.qc-round2-wide-title { margin: 0 0 5px; font-size: 16px; line-height: 1.2; font-weight: 800; letter-spacing: .3px; }
+.qc-round2-wide-description { margin: 0; font-size: 10px; line-height: 1.4; letter-spacing: .2px; }
+.qc-round2-wide-icon { width: 40px; height: 45px; object-fit: contain; flex-shrink: 0; }
+.qc-round2-start {
+  display: table;
+  margin: 25px auto 0;
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1px solid #a0a8f1;
+  background: linear-gradient(105deg, #f5f7ff 0%, #f7e6ed 100%);
+  box-shadow: -2px -2px 3px #ffffff, 2px 2px 4px #b7c2d0;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .2px;
+  background-clip: padding-box;
+  color: #9636ad;
+}
+
+@media (max-width: 700px) {
+  .qc-round2-container { width: min(100% - 24px, 520px); padding-top: 14px; }
+  .qc-round2-logo { width: 36px; height: 42px; top: 8px; }
+  .qc-round2-top { grid-template-columns: 65px minmax(0, 1fr) 65px; gap: 7px; padding-top: 22px; }
+  .qc-round2-team { width: 65px; height: 78px; }
+  .qc-round2-heading { margin-top: 32px; min-height: 67px; padding: 10px 4px 7px; }
+  .qc-round2-heading-icon { top: -31px; width: 40px; height: 35px; }
+  .qc-round2-heading-title { font-size: clamp(11px, 3.3vw, 18px); letter-spacing: .4px; }
+  .qc-round2-heading-subtitle { gap: 4px; margin-top: 6px; font-size: clamp(7px, 1.6vw, 10px); }
+  .qc-round2-cards { gap: 12px; margin-top: 24px; }
+  .qc-round2-card { min-height: 155px; padding: 9px 5px; }
+  .qc-round2-card-title { font-size: 12px; }
+  .qc-round2-card-description { font-size: 9px; }
+  .qc-round2-team-options { gap: 5px; }
+  .qc-round2-small-shield { width: 28px; height: 32px; }
+  .qc-round2-vs { width: 34px; height: 22px; font-size: 11px; }
+  .qc-round2-lifelines { gap: 4px; }
+  .qc-round2-lifeline-circle { width: 34px; height: 19px; font-size: 9px; }
+  .qc-round2-lifeline { font-size: 8px; }
+  .qc-round2-wide-card { gap: 7px; padding: 8px; }
+  .qc-round2-wide-title { font-size: 12px; }
+  .qc-round2-wide-description { font-size: 9px; }
+  .qc-round2-wide-icon { width: 27px; height: 32px; }
+}
+@media (max-width: 390px) {
+  .qc-round2-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qc-round2-card { grid-column: span 1; }
+  .qc-round2-card-three { grid-column: span 2; }
+  .qc-round2-wide-card { grid-column: span 2; }
+  .qc-round2-top { grid-template-columns: 52px minmax(0, 1fr) 52px; }
+  .qc-round2-team { width: 52px; height: 66px; }
+}

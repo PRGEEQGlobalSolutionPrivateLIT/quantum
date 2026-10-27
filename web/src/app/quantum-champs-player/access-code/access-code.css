@@ -1,0 +1,415 @@
+
+/* Quantum Champs — Access Code screen only */
+
+.qc-access-root,.qc-access-root *,.qc-access-root *::before,.qc-access-root *::after{box-sizing:border-box}
+
+.qc-access-root{width:100%;height:100vh;height:100dvh;min-height:0;margin:0;padding:0;overflow:hidden;background:linear-gradient(180deg,#b4e0f1 0%,#f0dce3 56%,#dfe6e9 100%);font-family:'Segoe UI',Arial,sans-serif;color:#374151}
+
+.qc-access-layout{width:100%;height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:clamp(30px,6vh,55px) 18px 16px;overflow-y:auto;overflow-x:hidden}
+
+/* Small centered logo — same proportions as reference */
+
+.qc-access-logo{position:relative;flex:none;width:clamp(55px,5vw,72px);height:clamp(65px,6vw,85px);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:clamp(20px,3.5vh,32px)}
+
+.qc-access-crown{width:82%;height:auto;display:block;position:relative;z-index:0;margin-bottom:-8px;filter:drop-shadow(0 2px 1px #c48c2c)}
+
+.qc-access-shield{position:relative;z-index:1;width:100%;padding:9px 3px 15px;background:linear-gradient(100deg,#60106a 0%,#87105e 49%,#d61667 50%,#b11e4c 100%);color:#fff;clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);border-radius:6px 6px 3px 3px;font-size:clamp(10px,.9vw,12px);font-weight:800;line-height:1.13;text-shadow:0 2px 2px #64103f}
+
+/* Heading — compact like image 2 */
+
+.qc-access-heading{margin:0 0 clamp(20px,3vh,30px);font-size:clamp(24px,3vw,40px);font-weight:800;line-height:1.2;letter-spacing:-.4px;text-align:center;background:linear-gradient(90deg,#700174 2%,#e51c61 48%,#652805 100%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(1px 4px 2px #bcb5b6)}
+
+/* Form */
+
+.qc-access-form{width:min(100%,620px);display:flex;flex-direction:column;align-items:center;gap:0}
+
+.qc-access-input{height:clamp(38px,5vh,46px);width:100%;padding:6px 12px;border:0;border-radius:6px;background:#dfe6e9;box-shadow:inset 3px 3px 7px #adb6ba,inset -3px -3px 5px #fff;text-align:center;outline:none;color:#733ab4;font-family:inherit;font-size:clamp(14px,1.4vw,18px);font-weight:700}
+
+.qc-access-input::placeholder{color:#737f89;opacity:1}
+
+.qc-access-code{width:clamp(150px,18vw,200px);font-size:clamp(17px,1.7vw,22px)}
+
+.qc-access-code::placeholder{background:linear-gradient(90deg,#4165f4,#e51d73);background-clip:text;-webkit-background-clip:text;color:transparent}
+
+/* Helper text */
+
+.qc-access-hint{font-size:clamp(11px,.9vw,13px);letter-spacing:.3px;line-height:1.5;margin:clamp(10px,1.8vh,15px) 0 clamp(22px,4vh,38px)}
+
+/* Team ID and User ID side by side */
+
+.qc-access-identity{width:min(100%,440px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px;margin-bottom:clamp(24px,4vh,38px)}
+
+.qc-access-identity label{display:flex;flex-direction:column;align-items:center;gap:7px;width:100%;min-width:0;font-size:clamp(12px,1vw,14px);font-weight:600}
+
+.qc-access-identity .qc-access-input{min-width:0;font-size:clamp(13px,1.2vw,16px)}
+
+/* Validation below each field */
+
+.qc-access-error,.qc-access-field-error{color:#c5223e;font-size:12px;font-weight:600;line-height:1.4;text-align:center}
+
+.qc-access-error{margin:8px 0 0}
+
+.qc-access-field-error{display:block;width:100%;margin-top:2px}
+
+.qc-access-input[aria-invalid="true"]{box-shadow:inset 3px 3px 7px #adb6ba,inset -3px -3px 5px #fff,0 0 0 1px #c5223e}
+
+/* Join Game button */
+
+.qc-access-button{min-width:clamp(140px,14vw,175px);padding:9px 22px;border:1.5px solid transparent;border-radius:40px;background-image:linear-gradient(#dfe6e9,#dfe6e9),linear-gradient(110deg,#4165f4,#e51d73);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:-3px -3px 6px #fff,4px 5px 7px #bbb;font:800 clamp(16px,1.5vw,20px) 'Segoe UI',Arial,sans-serif;color:#94339e;cursor:pointer}
+
+.qc-access-button:hover{filter:brightness(1.025)}
+
+.qc-access-button:focus-visible,.qc-access-input:focus-visible{outline:2px solid #4165f4;outline-offset:3px}
+
+/* Tablet */
+
+@media(max-width:700px){
+.qc-access-layout{padding-top:clamp(28px,6vh,45px)}
+.qc-access-heading{font-size:clamp(22px,5vw,34px)}
+.qc-access-identity{gap:12px}
+.qc-access-hint{max-width:95%}
+}
+
+/* Mobile */
+
+@media(max-width:390px){
+.qc-access-identity{grid-template-columns:1fr;gap:12px;width:min(100%,240px)}
+.qc-access-heading{font-size:clamp(21px,6vw,27px)}
+.qc-access-layout{overflow-y:auto}
+}
+
+/* Short desktop screens */
+
+@media(max-height:650px){
+.qc-access-layout{padding-top:12px}
+.qc-access-logo{width:55px;height:65px;margin-bottom:12px}
+.qc-access-heading{font-size:clamp(22px,2.8vw,34px);margin-bottom:14px}
+.qc-access-hint{margin:8px 0 18px}
+.qc-access-identity{margin-bottom:18px}
+.qc-access-identity label{gap:5px}
+.qc-access-input{height:38px}
+.qc-access-button{padding:8px 20px}
+}
+
+
+/* Access Code — Image 2 spacing and alignment */
+
+.qc-access-root{
+  height:100dvh;
+  overflow:hidden;
+}
+
+.qc-access-layout{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:clamp(55px,10vh,105px) 18px 20px;
+  overflow-y:auto;
+}
+
+.qc-access-logo{
+  flex-shrink:0;
+  margin-bottom:clamp(38px,7vh,75px);
+}
+
+.qc-access-heading{
+  width:100%;
+  text-align:center;
+  margin:0 0 clamp(32px,5.5vh,60px);
+}
+
+.qc-access-form{
+  width:min(100%,620px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+
+.qc-access-code{
+  flex-shrink:0;
+}
+
+.qc-access-hint{
+  margin:clamp(18px,3vh,30px) 0 clamp(38px,7vh,75px);
+  text-align:center;
+}
+
+.qc-access-identity{
+  width:min(100%,560px);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:22px;
+  margin-bottom:clamp(38px,6vh,65px);
+}
+
+.qc-access-identity label{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+.qc-access-button{
+  flex-shrink:0;
+  margin:0;
+}
+
+/* Tablet */
+
+@media(max-width:700px){
+  .qc-access-layout{
+    padding-top:clamp(40px,8vh,75px);
+  }
+
+  .qc-access-logo{
+    margin-bottom:clamp(25px,5vh,45px);
+  }
+
+  .qc-access-heading{
+    margin-bottom:clamp(25px,4vh,40px);
+  }
+
+  .qc-access-hint{
+    margin:18px 0 35px;
+  }
+
+  .qc-access-identity{
+    gap:12px;
+    margin-bottom:35px;
+  }
+}
+
+/* Small mobile screens */
+
+@media(max-width:390px){
+  .qc-access-identity{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+}
+
+/* Short desktop screens */
+
+@media(max-height:700px){
+  .qc-access-layout{
+    padding-top:clamp(15px,4vh,35px);
+  }
+
+  .qc-access-logo{
+    margin-bottom:clamp(12px,3vh,25px);
+  }
+
+  .qc-access-heading{
+    margin-bottom:clamp(15px,3vh,30px);
+  }
+
+  .qc-access-hint{
+    margin:12px 0 22px;
+  }
+
+  .qc-access-identity{
+    margin-bottom:22px;
+  }
+}
+
+
+
+/* Access Code page — center all content */
+
+.qc-access-root{
+  width:100%;
+  height:100dvh;
+  min-height:0;
+  overflow:hidden;
+}
+
+.qc-access-layout{
+  width:100%;
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px 18px;
+  overflow-y:auto;
+}
+
+/* Logo */
+
+.qc-access-logo{
+  flex-shrink:0;
+  margin:0 0 clamp(25px,4vh,42px);
+}
+
+/* Heading */
+
+.qc-access-heading{
+  width:100%;
+  margin:0 0 clamp(30px,5vh,48px);
+  text-align:center;
+}
+
+/* Form */
+
+.qc-access-form{
+  width:min(100%,620px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+
+/* Both fields side by side */
+
+.qc-access-fields{
+  width:min(100%,560px);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  align-items:start;
+}
+
+/* Same label styling */
+
+.qc-access-field{
+  width:100%;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.qc-access-field label{
+  width:100%;
+  text-align:center;
+  font-family:'Segoe UI',Arial,sans-serif;
+  font-size:16px;
+  font-weight:600;
+  color:#374151;
+}
+
+/* Identical input styling for Team Access Code and User ID */
+
+.qc-access-fields .qc-access-input,
+.qc-access-fields .qc-access-code{
+  box-sizing:border-box;
+  display:block;
+  width:100%;
+  max-width:none;
+  min-width:0;
+  height:48px;
+  padding:7px 12px;
+  border:0;
+  border-radius:7px;
+  background:#dfe6e9;
+  box-shadow:inset 3px 3px 7px #adb6ba,
+             inset -3px -3px 5px #ffffff;
+  font-family:'Segoe UI',Arial,sans-serif;
+  font-size:21px;
+  font-weight:700;
+  text-align:center;
+  color:#733ab4;
+  outline:none;
+}
+
+/* Identical gradient placeholder styling */
+
+.qc-access-fields .qc-access-input::placeholder,
+.qc-access-fields .qc-access-code::placeholder{
+  background:linear-gradient(90deg,#4165f4,#e51d73);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+  opacity:1;
+}
+
+/* Hint below both fields */
+
+.qc-access-fields + .qc-access-hint{
+  margin:clamp(20px,3vh,30px) 0
+         clamp(38px,6vh,60px);
+  text-align:center;
+  line-height:1.5;
+}
+
+/* Join button centered */
+
+.qc-access-button{
+  align-self:center;
+  margin:0;
+}
+
+/* Errors below their own inputs */
+
+.qc-access-field-error{
+  display:block;
+  width:100%;
+  color:#a91849;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.4;
+  text-align:center;
+}
+
+/* Tablet and mobile */
+
+@media(max-width:600px){
+  .qc-access-layout{
+    padding:20px 14px;
+  }
+
+  .qc-access-heading{
+    margin-bottom:30px;
+  }
+
+  .qc-access-fields{
+    gap:12px;
+  }
+
+  .qc-access-field label{
+    font-size:13px;
+  }
+
+  .qc-access-fields .qc-access-input,
+  .qc-access-fields .qc-access-code{
+    height:44px;
+    padding:6px;
+    font-size:clamp(12px,3.2vw,17px);
+  }
+}
+
+@media(max-width:390px){
+  .qc-access-fields{
+    grid-template-columns:1fr;
+    max-width:280px;
+    gap:16px;
+  }
+}
+
+/* Short desktop screens */
+
+@media(max-height:650px){
+  .qc-access-layout{
+    justify-content:center;
+    padding:12px 16px;
+  }
+
+  .qc-access-logo{
+    margin-bottom:12px;
+  }
+
+  .qc-access-heading{
+    margin-bottom:18px;
+  }
+
+  .qc-access-fields + .qc-access-hint{
+    margin:14px 0 22px;
+  }
+}

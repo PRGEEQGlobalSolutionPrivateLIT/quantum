@@ -1,0 +1,144 @@
+
+.qc-timer-page {
+  min-height: 100dvh;
+  padding: 12px;
+  background: linear-gradient(145deg, #b5dff0 0%, #e8e9ed 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.qc-timer-logo {
+  height: 56px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.qc-timer-logo img {
+  object-fit: contain;
+  object-position: left top;
+}
+
+.qc-timer-panel {
+  width: 100%;
+  min-height: 310px;
+  height: min(69vh, 540px);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(
+    105deg,
+    #68126e 0%,
+    #4c3d83 45%,
+    #208b91 100%
+  );
+}
+
+.qc-timer-blaze .qc-timer-panel {
+  background: linear-gradient(
+    105deg,
+    #720d7b 0%,
+    #ae147a 55%,
+    #ec287a 100%
+  );
+}
+
+.qc-timer-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.19;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent 0 8px,
+      rgba(255, 255, 255, 0.5) 8px 10px,
+      transparent 10px 18px
+    ),
+    repeating-linear-gradient(
+      120deg,
+      transparent 0 8px,
+      rgba(0, 0, 0, 0.45) 8px 10px,
+      transparent 10px 18px
+    );
+  pointer-events: none;
+}
+
+.qc-timer-ring {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    #fff 0deg 1.4deg,
+    transparent 1.4deg 3.4deg
+  );
+  animation: qc-timer-spin 30s linear infinite;
+}
+
+.qc-timer-ring::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border-radius: 50%;
+  background: linear-gradient(110deg, #51447f, #425d87);
+}
+
+.qc-timer-blaze .qc-timer-ring::before {
+  background: linear-gradient(110deg, #8b1a84, #c52381);
+}
+
+.qc-timer-ring span {
+  position: relative;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: qc-timer-counterspin 30s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes qc-timer-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes qc-timer-counterspin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .qc-timer-page {
+    padding: 9px;
+  }
+
+  .qc-timer-panel {
+    height: 65vh;
+    min-height: 280px;
+  }
+
+  .qc-timer-ring {
+    width: 126px;
+    height: 126px;
+  }
+
+  .qc-timer-ring span {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qc-timer-ring,
+  .qc-timer-ring span {
+    animation: none;
+  }
+}
